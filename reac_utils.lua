@@ -50,6 +50,8 @@ local function validatePeripherals()
     if not mon then error("Monitor not found!") end
 end
 
+reac_utils.setupPeripherals()
+
 -- Function to setup peripherals
 function reac_utils.setupPeripherals()
     validatePeripherals() -- Updated to include validation
