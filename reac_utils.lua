@@ -38,7 +38,7 @@ function logError(err)
 end
 
 -- Function to validate peripherals (Newly Added)
-local function validatePeripherals()
+function reac_utils.validatePeripherals()
     reactor = peripheral.find("draconic_reactor")
     gateIn = peripheral.find("flux_gate", function(name) return peripheral.getType(name) == "flux_gate" end)
     gateOut = peripheral.find("flux_gate", function(name) return peripheral.getType(name) == "flux_gate" end)
@@ -50,8 +50,6 @@ local function validatePeripherals()
     if not mon then error("Monitor not found!") end
 end
 
-reac_utils.setupPeripherals()
-
 -- Function to setup peripherals
 function reac_utils.setupPeripherals()
     validatePeripherals() -- Updated to include validation
@@ -61,6 +59,9 @@ function reac_utils.setupPeripherals()
     gateOut.setFlowOverride(0)
     print("Peripherals setup complete!")
 end
+
+reac_utils.setupPeripherals()
+print("hello world")
 
 -- Function to get reactor status
 function reac_utils.getReactorStatus()
