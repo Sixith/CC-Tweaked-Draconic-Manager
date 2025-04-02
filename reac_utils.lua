@@ -37,7 +37,7 @@ function logError(err)
     logFile.close()
 end
 
--- Function to validate peripherals (Newly Added)
+-- Function to validate peripherals
 function reac_utils.validatePeripherals()
     reactor = peripheral.find("draconic_reactor")
     gateIn = peripheral.find("flux_gate", function(name) return peripheral.getType(name) == "flux_gate" end)
@@ -52,16 +52,13 @@ end
 
 -- Function to setup peripherals
 function reac_utils.setupPeripherals()
-    validatePeripherals() -- Updated to include validation
+    reac_utils.validatePeripherals()
     gateIn.setOverrideEnabled(true)
     gateIn.setFlowOverride(0)
     gateOut.setOverrideEnabled(true)
     gateOut.setFlowOverride(0)
     print("Peripherals setup complete!")
 end
-
-reac_utils.setupPeripherals()
-print("hello world")
 
 -- Function to get reactor status
 function reac_utils.getReactorStatus()
