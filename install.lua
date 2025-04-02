@@ -10,7 +10,7 @@ local files = {
     "energy_core_utils.lua",
 }
 
-local baseUrl = "https://raw.githubusercontent.com/owzo/CC-Tweaked-Draconic-Manager/main/"
+local baseUrl = "https://raw.githubusercontent.com/Sixith/CC-Tweaked-Draconic-Manager/main/"
 
 for _, file in ipairs(files) do
     local url = baseUrl .. file
