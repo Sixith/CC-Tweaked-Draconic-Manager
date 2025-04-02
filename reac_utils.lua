@@ -131,7 +131,7 @@ end
 function reac_utils.setup()
     term.clear()
     print("Starting program...")
-    setupPeripherals()
+    reac_utils.setupPeripherals()
     print("Started!")
 end
 
@@ -145,7 +145,7 @@ function reac_utils.checkReactorStatus()
         return
     end
 
-    info = reactorInfo
+    reac_utils.info = reactorInfo
     currentField = info.fieldStrength / info.maxFieldStrength
     currentFuel = 1.0 - (info.fuelConversion / info.maxFuelConversion)
 end
@@ -216,8 +216,8 @@ function reac_utils.updateFluxGates()
         newOutflow = 0.0
     end
 
-    setFluxGateFlowRate(gateIn, math.floor(newInflow))
-    setFluxGateFlowRate(gateOut, math.floor(newOutflow * config.outputMultiplier))
+    reac_utils.setFluxGateFlowRate(gateIn, math.floor(newInflow))
+    reac_utils.setFluxGateFlowRate(gateOut, math.floor(newOutflow * config.outputMultiplier))
 end
 
 return reac_utils
